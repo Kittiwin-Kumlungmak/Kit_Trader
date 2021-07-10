@@ -1,0 +1,6 @@
+python_binance
+TA-Lib
+numpy
+pandas
+websocket_client==0.40.0
+matplotlib.pyplot
