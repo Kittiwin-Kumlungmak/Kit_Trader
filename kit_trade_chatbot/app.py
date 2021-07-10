@@ -23,6 +23,10 @@ handler = WebhookHandler(line_secret_key)
 
 client = Client(bnb_api_key, bnb_api_secret)
 
+@app.route('/')
+def test():
+    return('test')
+
 @app.route('/webhook', methods= ['POST'])
 def callback():
     # get X-Line-Signature header value
@@ -57,7 +61,7 @@ def get_port_info(event):
 
     line_bot_api.reply_message(
         event.reply_token,
-        FlexSendMessage(alt_text= 'My Portfolio', contents= content)
+        FlexSendMessage(alt_text= 'My Portfolio', contents= "Testing")
         )
 
 if __name__ == '__main__':
